@@ -4,48 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MT Interactive Platform</title>
-  <meta name="description" content="Secure access notice and anti-fraud reminder." />
+  <meta name="description" content="Safe connection gateway to MT official interactive platform." />
   <meta name="format-detection" content="telephone=no" />
 
   <style>
     :root { color-scheme: dark; }
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
+
     html, body {
       height: 100%;
       margin: 0;
       padding: 0;
     }
+
     body {
-      position: relative;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 16px;
-      background: radial-gradient(circle at top, #3b0000 0%, #000000 55%, #000000 100%);
-      color:#FF0000;
+      background:
+        radial-gradient(circle at 10% 0%, #123a5a 0, transparent 55%),
+        radial-gradient(circle at 90% 100%, #04101c 0, #02040a 55%, #000000 100%);
+      color:#e5f4ff;
       font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
       overflow-x: hidden;
     }
 
-    /* 背景流光 */
+    /* 背景流動光 */
     body::before {
       content:'';
       position:fixed;
       inset:-40%;
       background:
-        radial-gradient(circle at 15% 0%, rgba(255,0,0,0.24) 0, transparent 55%),
-        radial-gradient(circle at 85% 100%, rgba(212,175,55,0.18) 0, transparent 55%);
+        radial-gradient(circle at 20% 20%, rgba(0,198,255,0.22) 0, transparent 55%),
+        radial-gradient(circle at 80% 80%, rgba(0,255,179,0.18) 0, transparent 55%);
       opacity:0.9;
       z-index:-2;
       animation:bgFloat 18s linear infinite alternate;
     }
     @keyframes bgFloat {
       0%   { transform:translate3d(0,0,0) scale(1); }
-      50%  { transform:translate3d(0,10px,0) scale(1.03); }
-      100% { transform:translate3d(0,-10px,0) scale(1.02); }
+      50%  { transform:translate3d(0,8px,0) scale(1.03); }
+      100% { transform:translate3d(0,-8px,0) scale(1.02); }
     }
 
     .page {
@@ -54,83 +55,91 @@
     }
 
     .card {
+      position:relative;
       width:100%;
       padding:22px 18px 22px;
-      border-radius:22px;
-      background: radial-gradient(circle at top, #232323 0%, #050404 55%, #050404 100%);
-      border:1px solid #ff1c1c;
+      border-radius:20px;
+      background:
+        linear-gradient(135deg, rgba(7,22,35,0.96), rgba(6,16,32,0.98)),
+        radial-gradient(circle at top, rgba(39,120,190,0.55), transparent 60%);
+      border:1px solid rgba(64,196,255,0.7);
       box-shadow:
-        0 0 0 1px rgba(255,0,0,0.25),
-        0 0 32px rgba(255,0,0,0.55),
-        0 18px 40px rgba(0,0,0,0.9);
-      position:relative;
+        0 0 0 1px rgba(0,255,204,0.25),
+        0 18px 38px rgba(0,0,0,0.9);
       overflow:hidden;
     }
 
-    /* 卡片內部紅色光暈邊線 */
+    /* 卡片外圈淡光 */
     .card::before {
       content:'';
       position:absolute;
-      inset:0;
-      border-radius:22px;
-      border:1px solid rgba(255,0,0,0.5);
+      inset:-1px;
+      border-radius:inherit;
+      border:1px solid rgba(0,249,255,0.3);
       box-shadow:
-        0 0 18px rgba(255,0,0,0.8),
-        0 0 30px rgba(0,0,0,0.9);
-      opacity:0.45;
+        0 0 22px rgba(0,249,255,0.32),
+        0 0 40px rgba(0,0,0,1);
+      opacity:0.4;
       pointer-events:none;
     }
 
-    /* 上方安全提醒條 */
+    /* 上方連線提示條 */
     .notice-bar {
       position:relative;
       z-index:1;
-      margin:-6px auto 12px;
+      margin:-4px auto 10px;
       padding:6px 12px;
       display:inline-flex;
       align-items:center;
       gap:6px;
       border-radius:999px;
-      background:linear-gradient(90deg,#3b2a00,#d4af37,#3b2a00);
-      box-shadow:0 0 18px rgba(212,175,55,0.75);
-      color:#1b0f00;
-      font-size:12px;
+      background:
+        linear-gradient(90deg, rgba(3,33,53,0.9), rgba(0,189,255,0.95), rgba(3,33,53,0.9));
+      box-shadow:
+        0 0 12px rgba(0,216,255,0.85),
+        0 0 26px rgba(0,0,0,0.9);
+      color:#021019;
+      font-size:11px;
       font-weight:700;
       text-transform:uppercase;
-      letter-spacing:0.11em;
+      letter-spacing:0.12em;
     }
     .notice-dot {
       width:7px;
       height:7px;
       border-radius:999px;
-      background:#ff3b3b;
-      box-shadow:0 0 8px rgba(255,59,59,0.9);
+      background:#00ffc3;
+      box-shadow:0 0 8px rgba(0,255,195,0.95);
       animation:pulseDot 1.4s ease-in-out infinite;
     }
     @keyframes pulseDot {
       0%,100% { transform:scale(1); opacity:1; }
-      50% { transform:scale(1.4); opacity:0.6; }
+      50%     { transform:scale(1.4); opacity:0.6; }
     }
 
-    /* Logo 外框金邊 */
+    /* Logo 外框科技感 */
     .logo-frame {
       position:relative;
       z-index:1;
-      margin:4px auto 14px;
+      margin:6px auto 14px;
       padding:10px 14px;
-      border-radius:18px;
-      background: radial-gradient(circle at top, #3b2b10 0, #050404 60%);
-      border:1px solid rgba(212,175,55,0.85);
+      border-radius:16px;
+      background:
+        radial-gradient(circle at top, rgba(35,103,163,0.8), rgba(2,12,23,0.95));
+      border:1px solid rgba(144,224,255,0.9);
       box-shadow:
-        0 0 22px rgba(212,175,55,0.9),
-        0 12px 26px rgba(0,0,0,0.9);
+        0 0 24px rgba(64,196,255,0.9),
+        0 10px 26px rgba(0,0,0,0.95);
     }
     .logo-frame::before {
       content:'';
       position:absolute;
       inset:-1px;
       border-radius:inherit;
-      border:1px solid rgba(255,255,255,0.05);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.16), transparent 45%, rgba(0,255,204,0.21));
+      mix-blend-mode:screen;
+      opacity:0.55;
       pointer-events:none;
     }
 
@@ -140,6 +149,7 @@
       width:72%;
       max-width:260px;
       height:auto;
+      filter:drop-shadow(0 0 10px rgba(0,0,0,0.8));
     }
 
     h1 {
@@ -147,43 +157,45 @@
       z-index:1;
       font-size:18px;
       margin:10px 0 6px;
-      color:#ff2d2d;
+      color:#e9f7ff;
       font-weight:800;
       line-height:1.35;
-      text-shadow:0 0 6px rgba(0,0,0,0.9);
+      text-shadow:0 0 8px rgba(0,0,0,0.8);
     }
+
     p {
       position:relative;
       z-index:1;
       margin:4px 0;
-      color:#f1f1f1;
+      color:#cfe7ff;
       font-size:14px;
       line-height:1.5;
     }
+
     .sub {
       position:relative;
       z-index:1;
       margin-top:6px;
       font-size:12px;
-      color:#c7c7c7;
+      color:#9fb9d8;
       line-height:1.4;
     }
 
-    /* 底下紅色光暈 */
+    /* 底下光暈 */
     .card-glow {
       position:absolute;
       left:50%;
-      bottom:-40px;
-      width:160%;
-      max-width:720px;
+      bottom:-42px;
+      width:170%;
+      max-width:760px;
       height:120px;
-      background:radial-gradient(ellipse at center, rgba(255,0,0,0.35) 0, transparent 65%);
+      background:radial-gradient(ellipse at center, rgba(0,215,255,0.35) 0, transparent 65%);
       transform:translateX(-50%);
       z-index:0;
       pointer-events:none;
     }
 
-    /* 黑金按鈕 */
+    /* 科技感按鈕 */
     .btn-enter {
       position:relative;
       z-index:1;
@@ -191,35 +203,52 @@
       display:block;
       width:100%;
       padding:13px 0;
-      background:#050505;
       border-radius:999px;
-      border:1px solid #d4af37;
-      color:#ffd97a;
+      border:1px solid rgba(129,230,217,0.9);
+      background:
+        linear-gradient(120deg,#00c9ff,#00ffb0);
+      color:#021014;
       font-size:15px;
       font-weight:700;
       text-decoration:none;
-      letter-spacing:0.1em;
+      letter-spacing:0.12em;
       text-transform:uppercase;
       box-shadow:
-        0 0 16px rgba(212,175,55,0.6),
-        0 10px 22px rgba(0,0,0,0.95);
+        0 0 18px rgba(0,255,191,0.7),
+        0 10px 26px rgba(0,0,0,1);
+      overflow:hidden;
       transition:
-        background 0.18s ease,
+        transform 0.15s ease,
         box-shadow 0.18s ease,
-        transform 0.15s ease;
+        filter 0.18s ease;
+    }
+    .btn-enter::before {
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg, rgba(255,255,255,0.4), transparent 40%, transparent 60%, rgba(255,255,255,0.25));
+      transform:translateX(-120%);
+      opacity:0;
+      pointer-events:none;
+      transition:transform 0.6s ease, opacity 0.3s ease;
     }
     .btn-enter:hover {
-      background:#111111;
-      box-shadow:
-        0 0 22px rgba(255,215,128,0.9),
-        0 12px 26px rgba(0,0,0,1);
       transform:translateY(-1px);
+      box-shadow:
+        0 0 24px rgba(0,255,214,0.95),
+        0 12px 30px rgba(0,0,0,1);
+      filter:brightness(1.05);
+    }
+    .btn-enter:hover::before {
+      opacity:1;
+      transform:translateX(140%);
     }
     .btn-enter:active {
       transform:translateY(0);
       box-shadow:
-        0 0 14px rgba(212,175,55,0.7),
-        0 8px 18px rgba(0,0,0,1);
+        0 0 16px rgba(0,255,191,0.75),
+        0 8px 20px rgba(0,0,0,1);
+      filter:brightness(0.98);
     }
 
     /* 小螢幕微調 */
@@ -248,16 +277,18 @@
 
       <div class="notice-bar">
         <span class="notice-dot"></span>
-        <span id="t-bar">安全提醒</span>
+        <span id="t-bar">連線提示</span>
       </div>
 
       <div class="logo-frame">
         <img class="logo" src="./ofa168-logo-300.png" alt="Logo">
       </div>
 
-      <h1 id="t-title">請勿相信任何代操、代儲、穩贏等訊息，皆為詐騙。</h1>
-      <p id="t-desc">請妥善保管帳號密碼，以免造成損失。</p>
-      <div id="t-sub" class="sub">平台不會主動向您索取密碼或進行任何代操作業。</div>
+      <h1 id="t-title">正在為您建立安全連線</h1>
+      <p id="t-desc">此頁面將協助您快速前往 MT 官方互動平台。</p>
+      <div id="t-sub" class="sub">
+        建議您確認連結來源為官方管道，並妥善保管帳號資訊，以保障您的使用安全。
+      </div>
 
       <a id="enterBtn" class="btn-enter" href="#">進入官網</a>
     </section>
@@ -269,89 +300,89 @@
     const I18N = {
       'en': {
         htmlLang: 'en',
-        titleTag: 'Secure Access Notice - MT Interactive Platform',
-        metaDesc: 'Important anti-fraud reminder. Do not trust proxy betting, top-up agents, or guaranteed wins.',
-        bar: 'Security Notice',
-        h1: 'Do not trust any messages about proxy betting, top-up agents, or guaranteed wins — they are scams.',
-        p:  'Please keep your account and password secure to avoid any loss.',
-        sub:'The platform will never ask for your password or operate your account on your behalf.',
+        titleTag: 'Secure Connection - MT Interactive Platform',
+        metaDesc: 'Safe connection gateway to MT official interactive platform.',
+        bar: 'Connection Gateway',
+        h1: 'Establishing a secure connection for you',
+        p:  'This page helps you connect safely to the official MT interactive platform.',
+        sub:'Please make sure the link comes from an official channel and keep your account information protected.',
         btn:'Enter Website',
         alt:'Logo'
       },
       'zh-Hant': {
         htmlLang: 'zh-Hant',
-        titleTag: 'MT互動平台 - 安全提醒',
-        metaDesc: '請勿相信任何代操、代儲、穩贏等訊息，皆為詐騙。請妥善保管帳號密碼，以免造成損失。',
-        bar: '安全提醒',
-        h1: '請勿相信任何代操、代儲、穩贏等訊息，皆為詐騙。',
-        p:  '請妥善保管帳號密碼，以免造成損失。',
-        sub:'平台不會主動向您索取密碼或進行任何代操作業。',
+        titleTag: 'MT互動平台 - 安全連線入口',
+        metaDesc: '此頁面協助您安全連線至 MT 官方互動平台。',
+        bar: '連線提示',
+        h1: '正在為您建立安全連線',
+        p:  '此頁面將協助您快速前往 MT 官方互動平台。',
+        sub:'建議您確認連結來源為官方管道，並妥善保管帳號資訊，以保障您的使用安全。',
         btn:'進入官網',
         alt:'標誌'
       },
       'zh-Hans': {
         htmlLang: 'zh-CN',
-        titleTag: 'MT互动平台 - 安全提醒',
-        metaDesc: '请勿相信任何代操、代储、稳赢等信息，皆为诈骗。请妥善保管账号密码，以免造成损失。',
-        bar: '安全提醒',
-        h1: '请勿相信任何代操、代储、稳赢等信息，皆为诈骗。',
-        p:  '请妥善保管账号密码，以免造成损失。',
-        sub:'平台不会主动向您索取密码或进行任何代操作业。',
+        titleTag: 'MT互动平台 - 安全连接入口',
+        metaDesc: '此页面协助您安全连接至 MT 官方互动平台。',
+        bar: '连接提示',
+        h1: '正在为您建立安全连接',
+        p:  '此页面将协助您快速前往 MT 官方互动平台。',
+        sub:'建议您确认链接来源为官方渠道，并妥善保管账号信息，以保障您的使用安全。',
         btn:'进入官网',
         alt:'标志'
       },
       'yue': {
         htmlLang: 'zh-HK',
-        titleTag: 'MT 互動平台 - 安全提示',
-        metaDesc: '請勿相信任何代操、代儲、穩贏等訊息，全部都係詐騙。請妥善保管帳號同密碼，以免造成損失。',
-        bar: '安全提示',
-        h1: '請勿相信任何代操、代儲、穩贏等訊息，全部都係詐騙。',
-        p:  '請妥善保管帳號同密碼，以免造成損失。',
-        sub:'平台唔會主動向你索取密碼，亦唔會代你操作帳號。',
+        titleTag: 'MT 互動平台 - 安全連線入口',
+        metaDesc: '呢個頁面會幫你安全連線去 MT 官方互動平台。',
+        bar: '連線提示',
+        h1: '緊為你建立安全連線',
+        p:  '呢個頁面會協助你快速前往 MT 官方互動平台。',
+        sub:'建議你確保連結係由官方渠道取得，並妥善保管帳號資料，保障使用安全。',
         btn:'進入官網',
         alt:'標誌'
       },
       'km': {
         htmlLang: 'km',
-        titleTag: 'វេទិកាអន្តរកម្ម MT - ការព្រមានសុវត្ថិភាព',
-        metaDesc: 'សូមកុំជឿលើសារអំពីលេងជំនួស ដាក់ប្រាក់ជំនួស ឬធានាឈ្នះ—ទាំងអស់គឺជាការលួចបោក។',
-        bar: 'ការព្រមានសុវត្ថិភាព',
-        h1:'សូមកុំជឿលើសារណាមួយអំពីសេវាកម្មលេងជំនួស ដាក់ប្រាក់ជំនួស ឬការធានាឈ្នះ—ទាំងអស់ជាការលួចបោក។',
-        p:'សូមរក្សាគណនី និងពាក្យសម្ងាត់របស់អ្នកឲ្យមានសុវត្ថិភាព ដើម្បីជៀសវាងការខាតបង់។',
-        sub:'វេទិកានឹងមិនស្នើសុំពាក្យសម្ងាត់របស់អ្នក ឬប្រតិបត្តិការណាមួយជំនួសអ្នកទេ។',
-        btn:'ចូលទៅគេហទំព័រ',
+        titleTag: 'MT - ច្រកតភ្ជាប់មានសុវត្ថិភាព',
+        metaDesc: 'ទំព័រនេះជួយអ្នកភ្ជាប់ទៅវេទិកាផ្លូវការ MT ដោយសុវត្ថិភាព។',
+        bar: 'ច្រកតភ្ជាប់',
+        h1:'កំពុងបង្កើតការតភ្ជាប់មានសុវត្ថិភាពសម្រាប់អ្នក',
+        p:'ទំព័រនេះជួយអ្នកភ្ជាប់ទៅវេទិកាផ្លូវការ MT ដោយសុវត្ថិភាព។',
+        sub:'សូមបញ្ជាក់ថាតំណភ្ជាប់នេះបានមកពីបណ្តាញផ្លូវការ ហើយរក្សាការពារព័ត៌មានគណនីរបស់អ្នកឲ្យបានល្អ។',
+        btn:'ចូលទៅវេទិកាផ្លូវការ',
         alt:'ឡូហ្គោ'
       },
       'vi': {
         htmlLang: 'vi',
-        titleTag: 'Nền tảng MT - Thông báo an toàn',
-        metaDesc: 'Vui lòng không tin vào bất kỳ dịch vụ uỷ thác chơi hộ, nạp hộ hay cam kết thắng nào — tất cả đều là lừa đảo.',
-        bar: 'Thông báo an toàn',
-        h1:'Vui lòng không tin vào bất kỳ dịch vụ uỷ thác chơi hộ, nạp hộ hay cam kết thắng nào — tất cả đều là lừa đảo.',
-        p:'Hãy giữ kín tài khoản và mật khẩu để tránh thiệt hại.',
-        sub:'Nền tảng sẽ không bao giờ yêu cầu mật khẩu hoặc tự ý thao tác tài khoản của bạn.',
+        titleTag: 'Cổng kết nối an toàn - Nền tảng MT',
+        metaDesc: 'Trang này hỗ trợ bạn kết nối an toàn đến nền tảng MT chính thức.',
+        bar: 'Kết nối an toàn',
+        h1:'Đang thiết lập kết nối an toàn cho bạn',
+        p:'Trang này giúp bạn truy cập nhanh đến nền tảng tương tác MT chính thức một cách an toàn.',
+        sub:'Vui lòng đảm bảo liên kết được lấy từ kênh chính thức và giữ kín thông tin tài khoản của bạn.',
         btn:'Vào trang chính',
         alt:'Biểu trưng'
       },
       'th': {
         htmlLang: 'th',
-        titleTag: 'แพลตฟอร์ม MT - คำเตือนด้านความปลอดภัย',
-        metaDesc: 'โปรดอย่าเชื่อบริการรับปั่น รับฝาก หรือการันตีว่าได้กำไรชัวร์ ข้อความลักษณะนี้ล้วนเป็นมิจฉาชีพ',
-        bar: 'คำเตือนด้านความปลอดภัย',
-        h1:'โปรดอย่าเชื่อบริการรับปั่น รับฝาก หรือการันตีว่าได้กำไรชัวร์ — ข้อความลักษณะนี้ล้วนเป็นมิจฉาชีพ',
-        p:'กรุณาเก็บรักษาบัญชีและรหัสผ่านให้ปลอดภัย เพื่อหลีกเลี่ยงความเสียหาย',
-        sub:'แพลตฟอร์มจะไม่ขอรหัสผ่านหรือดำเนินการใด ๆ แทนคุณ',
+        titleTag: 'ทางเข้าเชื่อมต่ออย่างปลอดภัย - แพลตฟอร์ม MT',
+        metaDesc: 'หน้านี้ช่วยให้คุณเชื่อมต่อไปยังแพลตฟอร์ม MT อย่างปลอดภัย.',
+        bar: 'การเชื่อมต่อ',
+        h1:'กำลังตั้งค่าการเชื่อมต่อที่ปลอดภัยสำหรับคุณ',
+        p:'หน้านี้ช่วยพาคุณไปยังแพลตฟอร์มโต้ตอบ MT อย่างเป็นทางการได้อย่างปลอดภัยและรวดเร็ว.',
+        sub:'กรุณาตรวจสอบให้แน่ใจว่าลิงก์มาจากช่องทางอย่างเป็นทางการ และเก็บรักษาข้อมูลบัญชีของคุณให้ปลอดภัย.',
         btn:'เข้าสู่เว็บไซต์',
         alt:'โลโก้'
       },
       'ms': {
         htmlLang: 'ms',
-        titleTag: 'Platform MT - Peringatan Keselamatan',
-        metaDesc: 'Jangan percayai tawaran khidmat main akaun, tambah nilai bagi pihak anda atau janji menang — semuanya adalah penipuan.',
-        bar: 'Peringatan Keselamatan',
-        h1:'Jangan percayai tawaran khidmat main akaun, tambah nilai bagi pihak anda atau janji menang — semuanya adalah penipuan.',
-        p:'Sila lindungi akaun dan kata laluan anda bagi mengelakkan kerugian.',
-        sub:'Platform tidak akan meminta kata laluan anda atau mengendalikan akaun bagi pihak anda.',
+        titleTag: 'Pintu sambungan selamat - Platform MT',
+        metaDesc: 'Halaman ini membantu anda menyambung ke platform rasmi MT dengan selamat.',
+        bar: 'Gateway Sambungan',
+        h1:'Sedang menyediakan sambungan selamat untuk anda',
+        p:'Halaman ini membantu anda pergi ke platform interaktif rasmi MT dengan cara yang selamat.',
+        sub:'Sila pastikan pautan ini datang daripada saluran rasmi dan lindungi maklumat akaun anda dengan baik.',
         btn:'Masuk Laman Rasmi',
         alt:'Logo'
       }
@@ -367,11 +398,11 @@
         if (lang.startsWith('zh-hk') || lang.startsWith('zh-mo') || lang.includes('yue')) return 'yue';
         if (lang.startsWith('zh-tw') || lang.includes('hant')) return 'zh-Hant';
         if (lang.startsWith('zh-cn') || lang.startsWith('zh-sg') || lang.includes('hans')) return 'zh-Hans';
-        if (lang.startsWith('km')) return 'km';
-        if (lang.startsWith('vi')) return 'vi';
-        if (lang.startsWith('th')) return 'th';
-        if (lang.startsWith('ms')) return 'ms';
-        if (lang.startsWith('en')) return 'en';
+        if (lang.startsWith('km'))  return 'km';
+        if (lang.startsWith('vi'))  return 'vi';
+        if (lang.startsWith('th'))  return 'th';
+        if (lang.startsWith('ms'))  return 'ms';
+        if (lang.startsWith('en'))  return 'en';
       }
       return 'en';
     }
