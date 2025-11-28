@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MT Interactive Platform</title>
-  <meta name="description" content="Safe connection gateway to MT official interactive platform." />
+  <title>OFA168 - 官方入口</title>
+  <meta name="description" content="安全前往 OFA168 官方平台的入口頁面。" />
   <meta name="format-detection" content="telephone=no" />
 
   <style>
@@ -24,21 +24,21 @@
       align-items: center;
       padding: 16px;
       background:
-        radial-gradient(circle at 10% 0%, #123a5a 0, transparent 55%),
-        radial-gradient(circle at 90% 100%, #04101c 0, #02040a 55%, #000000 100%);
-      color:#e5f4ff;
+        radial-gradient(circle at 15% 0%, #3a0008 0, transparent 55%),
+        radial-gradient(circle at 85% 100%, #1a0004 0, #050006 55%, #000000 100%);
+      color:#ffe5e5;
       font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
       overflow-x: hidden;
     }
 
-    /* 背景流動光 */
+    /* 背景紅色流光 */
     body::before {
       content:'';
       position:fixed;
       inset:-40%;
       background:
-        radial-gradient(circle at 20% 20%, rgba(0,198,255,0.22) 0, transparent 55%),
-        radial-gradient(circle at 80% 80%, rgba(0,255,179,0.18) 0, transparent 55%);
+        radial-gradient(circle at 20% 20%, rgba(255,60,60,0.26) 0, transparent 55%),
+        radial-gradient(circle at 80% 80%, rgba(255,0,0,0.18) 0, transparent 55%);
       opacity:0.9;
       z-index:-2;
       animation:bgFloat 18s linear infinite alternate;
@@ -60,30 +60,28 @@
       padding:22px 18px 22px;
       border-radius:20px;
       background:
-        linear-gradient(135deg, rgba(7,22,35,0.96), rgba(6,16,32,0.98)),
-        radial-gradient(circle at top, rgba(39,120,190,0.55), transparent 60%);
-      border:1px solid rgba(64,196,255,0.7);
+        linear-gradient(135deg, rgba(22,6,10,0.96), rgba(8,2,4,0.98)),
+        radial-gradient(circle at top, rgba(120,18,32,0.7), transparent 60%);
+      border:1px solid rgba(255,80,80,0.9);
       box-shadow:
-        0 0 0 1px rgba(0,255,204,0.25),
+        0 0 0 1px rgba(255,0,0,0.25),
         0 18px 38px rgba(0,0,0,0.9);
       overflow:hidden;
     }
 
-    /* 卡片外圈淡光 */
     .card::before {
       content:'';
       position:absolute;
       inset:-1px;
       border-radius:inherit;
-      border:1px solid rgba(0,249,255,0.3);
+      border:1px solid rgba(255,120,120,0.35);
       box-shadow:
-        0 0 22px rgba(0,249,255,0.32),
+        0 0 22px rgba(255,0,0,0.45),
         0 0 40px rgba(0,0,0,1);
       opacity:0.4;
       pointer-events:none;
     }
 
-    /* 上方連線提示條 */
     .notice-bar {
       position:relative;
       z-index:1;
@@ -94,11 +92,11 @@
       gap:6px;
       border-radius:999px;
       background:
-        linear-gradient(90deg, rgba(3,33,53,0.9), rgba(0,189,255,0.95), rgba(3,33,53,0.9));
+        linear-gradient(90deg, rgba(40,6,8,0.9), rgba(255,60,60,0.98), rgba(40,6,8,0.9));
       box-shadow:
-        0 0 12px rgba(0,216,255,0.85),
+        0 0 12px rgba(255,70,70,0.9),
         0 0 26px rgba(0,0,0,0.9);
-      color:#021019;
+      color:#2b0202;
       font-size:11px;
       font-weight:700;
       text-transform:uppercase;
@@ -108,8 +106,8 @@
       width:7px;
       height:7px;
       border-radius:999px;
-      background:#00ffc3;
-      box-shadow:0 0 8px rgba(0,255,195,0.95);
+      background:#ff4b4b;
+      box-shadow:0 0 8px rgba(255,75,75,0.95);
       animation:pulseDot 1.4s ease-in-out infinite;
     }
     @keyframes pulseDot {
@@ -117,7 +115,6 @@
       50%     { transform:scale(1.4); opacity:0.6; }
     }
 
-    /* Logo 外框科技感 */
     .logo-frame {
       position:relative;
       z-index:1;
@@ -125,10 +122,10 @@
       padding:10px 14px;
       border-radius:16px;
       background:
-        radial-gradient(circle at top, rgba(35,103,163,0.8), rgba(2,12,23,0.95));
-      border:1px solid rgba(144,224,255,0.9);
+        radial-gradient(circle at top, rgba(68,18,18,0.9), rgba(15,4,6,0.98));
+      border:1px solid rgba(255,170,120,0.95);
       box-shadow:
-        0 0 24px rgba(64,196,255,0.9),
+        0 0 24px rgba(255,120,80,0.95),
         0 10px 26px rgba(0,0,0,0.95);
     }
     .logo-frame::before {
@@ -137,7 +134,7 @@
       inset:-1px;
       border-radius:inherit;
       background:
-        linear-gradient(135deg, rgba(255,255,255,0.16), transparent 45%, rgba(0,255,204,0.21));
+        linear-gradient(135deg, rgba(255,255,255,0.18), transparent 45%, rgba(255,80,80,0.26));
       mix-blend-mode:screen;
       opacity:0.55;
       pointer-events:none;
@@ -149,7 +146,7 @@
       width:72%;
       max-width:260px;
       height:auto;
-      filter:drop-shadow(0 0 10px rgba(0,0,0,0.8));
+      filter:drop-shadow(0 0 10px rgba(0,0,0,0.9));
     }
 
     h1 {
@@ -157,17 +154,17 @@
       z-index:1;
       font-size:18px;
       margin:10px 0 6px;
-      color:#e9f7ff;
+      color:#ffeaea;
       font-weight:800;
-      line-height:1.35;
-      text-shadow:0 0 8px rgba(0,0,0,0.8);
+      line-height:1.5;
+      text-shadow:0 0 8px rgba(0,0,0,0.85);
     }
 
     p {
       position:relative;
       z-index:1;
       margin:4px 0;
-      color:#cfe7ff;
+      color:#f8dede;
       font-size:14px;
       line-height:1.5;
     }
@@ -177,11 +174,10 @@
       z-index:1;
       margin-top:6px;
       font-size:12px;
-      color:#9fb9d8;
+      color:#f0bcbc;
       line-height:1.4;
     }
 
-    /* 底下光暈 */
     .card-glow {
       position:absolute;
       left:50%;
@@ -189,33 +185,33 @@
       width:170%;
       max-width:760px;
       height:120px;
-      background:radial-gradient(ellipse at center, rgba(0,215,255,0.35) 0, transparent 65%);
+      background:radial-gradient(ellipse at center, rgba(255,0,0,0.38) 0, transparent 65%);
       transform:translateX(-50%);
       z-index:0;
       pointer-events:none;
     }
 
-    /* 科技感按鈕 */
+    /* 紅光科技版按鈕 */
     .btn-enter {
       position:relative;
       z-index:1;
-      margin-top:20px;
+      margin:20px auto 0;
       display:block;
-      width:100%;
+      width:82%;
       padding:13px 0;
       border-radius:999px;
-      border:1px solid rgba(129,230,217,0.9);
-      background:
-        linear-gradient(120deg,#00c9ff,#00ffb0);
-      color:#021014;
+      border:1px solid rgba(255,120,120,0.9);
+      background:linear-gradient(120deg,#ff3b3b,#ff0000,#b80000);
+      color:#ffffff;
       font-size:15px;
       font-weight:700;
       text-decoration:none;
       letter-spacing:0.12em;
       text-transform:uppercase;
+      text-align:center;
       box-shadow:
-        0 0 18px rgba(0,255,191,0.7),
-        0 10px 26px rgba(0,0,0,1);
+        0 0 18px rgba(255,0,0,0.8),
+        0 10px 26px rgba(0,0,0,0.98);
       overflow:hidden;
       transition:
         transform 0.15s ease,
@@ -226,7 +222,13 @@
       content:'';
       position:absolute;
       inset:0;
-      background:linear-gradient(120deg, rgba(255,255,255,0.4), transparent 40%, transparent 60%, rgba(255,255,255,0.25));
+      background:linear-gradient(
+        120deg,
+        rgba(255,255,255,0.45),
+        transparent 40%,
+        transparent 60%,
+        rgba(255,255,255,0.25)
+      );
       transform:translateX(-120%);
       opacity:0;
       pointer-events:none;
@@ -235,9 +237,9 @@
     .btn-enter:hover {
       transform:translateY(-1px);
       box-shadow:
-        0 0 24px rgba(0,255,214,0.95),
+        0 0 26px rgba(255,0,0,1),
         0 12px 30px rgba(0,0,0,1);
-      filter:brightness(1.05);
+      filter:brightness(1.06);
     }
     .btn-enter:hover::before {
       opacity:1;
@@ -246,12 +248,11 @@
     .btn-enter:active {
       transform:translateY(0);
       box-shadow:
-        0 0 16px rgba(0,255,191,0.75),
+        0 0 18px rgba(255,50,50,0.85),
         0 8px 20px rgba(0,0,0,1);
-      filter:brightness(0.98);
+      filter:brightness(0.97);
     }
 
-    /* 小螢幕微調 */
     @media (max-width: 360px) {
       .card {
         padding:18px 14px 18px;
@@ -284,8 +285,8 @@
         <img class="logo" src="./ofa168-logo-300.png" alt="Logo">
       </div>
 
-      <h1 id="t-title">正在為您建立安全連線</h1>
-      <p id="t-desc">此頁面將協助您快速前往 MT 官方互動平台。</p>
+      <h1 id="t-title">親愛的用戶您好，已為您尋找到安全路線。</h1>
+      <p id="t-desc">點擊下方按鈕即可前往官方平台。</p>
       <div id="t-sub" class="sub">
         建議您確認連結來源為官方管道，並妥善保管帳號資訊，以保障您的使用安全。
       </div>
@@ -300,88 +301,88 @@
     const I18N = {
       'en': {
         htmlLang: 'en',
-        titleTag: 'Secure Connection - MT Interactive Platform',
-        metaDesc: 'Safe connection gateway to MT official interactive platform.',
-        bar: 'Connection Gateway',
-        h1: 'Establishing a secure connection for you',
-        p:  'This page helps you connect safely to the official MT interactive platform.',
+        titleTag: 'OFA168 - Official Entry',
+        metaDesc: 'Safe entry page to the official OFA168 platform.',
+        bar: 'Connection Info',
+        h1: 'Dear user, we have found a secure route for you.',
+        p:  'Click the button below to proceed to the official platform.',
         sub:'Please make sure the link comes from an official channel and keep your account information protected.',
         btn:'Enter Website',
         alt:'Logo'
       },
       'zh-Hant': {
         htmlLang: 'zh-Hant',
-        titleTag: 'MT互動平台 - 安全連線入口',
-        metaDesc: '此頁面協助您安全連線至 MT 官方互動平台。',
+        titleTag: 'OFA168 - 官方入口',
+        metaDesc: '安全前往 OFA168 官方平台的入口頁面。',
         bar: '連線提示',
-        h1: '正在為您建立安全連線',
-        p:  '此頁面將協助您快速前往 MT 官方互動平台。',
+        h1: '親愛的用戶您好，已為您尋找到安全路線。',
+        p:  '點擊下方按鈕即可前往官方平台。',
         sub:'建議您確認連結來源為官方管道，並妥善保管帳號資訊，以保障您的使用安全。',
         btn:'進入官網',
         alt:'標誌'
       },
       'zh-Hans': {
         htmlLang: 'zh-CN',
-        titleTag: 'MT互动平台 - 安全连接入口',
-        metaDesc: '此页面协助您安全连接至 MT 官方互动平台。',
+        titleTag: 'OFA168 - 官方入口',
+        metaDesc: '安全前往 OFA168 官方平台的入口页面。',
         bar: '连接提示',
-        h1: '正在为您建立安全连接',
-        p:  '此页面将协助您快速前往 MT 官方互动平台。',
+        h1: '亲爱的用户您好，已为您寻找到了安全线路。',
+        p:  '点击下方按钮即可前往官方平台。',
         sub:'建议您确认链接来源为官方渠道，并妥善保管账号信息，以保障您的使用安全。',
         btn:'进入官网',
         alt:'标志'
       },
       'yue': {
         htmlLang: 'zh-HK',
-        titleTag: 'MT 互動平台 - 安全連線入口',
-        metaDesc: '呢個頁面會幫你安全連線去 MT 官方互動平台。',
+        titleTag: 'OFA168 - 官方入口',
+        metaDesc: '安全前往 OFA168 官方平台嘅入口頁。',
         bar: '連線提示',
-        h1: '緊為你建立安全連線',
-        p:  '呢個頁面會協助你快速前往 MT 官方互動平台。',
-        sub:'建議你確保連結係由官方渠道取得，並妥善保管帳號資料，保障使用安全。',
+        h1: '親愛嘅用戶您好，已為你搵到安全路徑。',
+        p:  '撳下面個按鈕即可前往官方平台。',
+        sub:'建議你確認連結係由官方渠道取得，並妥善保管帳號資料，以保障使用安全。',
         btn:'進入官網',
         alt:'標誌'
       },
       'km': {
         htmlLang: 'km',
-        titleTag: 'MT - ច្រកតភ្ជាប់មានសុវត្ថិភាព',
-        metaDesc: 'ទំព័រនេះជួយអ្នកភ្ជាប់ទៅវេទិកាផ្លូវការ MT ដោយសុវត្ថិភាព។',
-        bar: 'ច្រកតភ្ជាប់',
-        h1:'កំពុងបង្កើតការតភ្ជាប់មានសុវត្ថិភាពសម្រាប់អ្នក',
-        p:'ទំព័រនេះជួយអ្នកភ្ជាប់ទៅវេទិកាផ្លូវការ MT ដោយសុវត្ថិភាព។',
-        sub:'សូមបញ្ជាក់ថាតំណភ្ជាប់នេះបានមកពីបណ្តាញផ្លូវការ ហើយរក្សាការពារព័ត៌មានគណនីរបស់អ្នកឲ្យបានល្អ។',
+        titleTag: 'OFA168 - ច្រកចូលផ្លូវការ',
+        metaDesc: 'ទំព័រនេះជួយអ្នកចូលទៅវេទិកាផ្លូវការ OFA168 ដោយសុវត្ថិភាព។',
+        bar: 'ព័ត៌មានការតភ្ជាប់',
+        h1:'អ្នកប្រើដែលគួរឱ្យគោរព សូមជំរាបថា យើងបានរកឃើញផ្លូវដែលមានសុវត្ថិភាពសម្រាប់អ្នកហើយ។',
+        p:'សូមចុចប៊ូតុងខាងក្រោម ដើម្បីចូលទៅកាន់វេទិកាផ្លូវការ។',
+        sub:'សូមប្រាកដថាតំណភ្ជាប់បានមកពីបណ្តាញផ្លូវការ ហើយការពារព័ត៌មានគណនីរបស់អ្នកឲ្យបានល្អ។',
         btn:'ចូលទៅវេទិកាផ្លូវការ',
         alt:'ឡូហ្គោ'
       },
       'vi': {
         htmlLang: 'vi',
-        titleTag: 'Cổng kết nối an toàn - Nền tảng MT',
-        metaDesc: 'Trang này hỗ trợ bạn kết nối an toàn đến nền tảng MT chính thức.',
-        bar: 'Kết nối an toàn',
-        h1:'Đang thiết lập kết nối an toàn cho bạn',
-        p:'Trang này giúp bạn truy cập nhanh đến nền tảng tương tác MT chính thức một cách an toàn.',
+        titleTag: 'OFA168 - Cổng truy cập chính thức',
+        metaDesc: 'Trang này giúp bạn truy cập an toàn đến nền tảng chính thức OFA168.',
+        bar: 'Thông tin kết nối',
+        h1:'Quý khách thân mến, chúng tôi đã tìm được tuyến kết nối an toàn dành cho bạn.',
+        p:'Hãy nhấn nút bên dưới để chuyển đến nền tảng chính thức.',
         sub:'Vui lòng đảm bảo liên kết được lấy từ kênh chính thức và giữ kín thông tin tài khoản của bạn.',
         btn:'Vào trang chính',
         alt:'Biểu trưng'
       },
       'th': {
         htmlLang: 'th',
-        titleTag: 'ทางเข้าเชื่อมต่ออย่างปลอดภัย - แพลตฟอร์ม MT',
-        metaDesc: 'หน้านี้ช่วยให้คุณเชื่อมต่อไปยังแพลตฟอร์ม MT อย่างปลอดภัย.',
-        bar: 'การเชื่อมต่อ',
-        h1:'กำลังตั้งค่าการเชื่อมต่อที่ปลอดภัยสำหรับคุณ',
-        p:'หน้านี้ช่วยพาคุณไปยังแพลตฟอร์มโต้ตอบ MT อย่างเป็นทางการได้อย่างปลอดภัยและรวดเร็ว.',
-        sub:'กรุณาตรวจสอบให้แน่ใจว่าลิงก์มาจากช่องทางอย่างเป็นทางการ และเก็บรักษาข้อมูลบัญชีของคุณให้ปลอดภัย.',
+        titleTag: 'OFA168 - ทางเข้าอย่างเป็นทางการ',
+        metaDesc: 'หน้านี้ช่วยให้คุณเข้าสู่แพลตฟอร์มอย่างเป็นทางการของ OFA168 ได้อย่างปลอดภัย.',
+        bar: 'ข้อมูลการเชื่อมต่อ',
+        h1:'เรียนผู้ใช้ที่เคารพ ขณะนี้เราได้เตรียมเส้นทางที่ปลอดภัยสำหรับคุณแล้ว',
+        p:'กรุณาคลิกปุ่มด้านล่างเพื่อไปยังแพลตฟอร์มอย่างเป็นทางการ.',
+        sub:'โปรดตรวจสอบให้แน่ใจว่าลิงก์มาจากช่องทางอย่างเป็นทางการ และเก็บรักษาข้อมูลบัญชีของคุณให้ปลอดภัย.',
         btn:'เข้าสู่เว็บไซต์',
         alt:'โลโก้'
       },
       'ms': {
         htmlLang: 'ms',
-        titleTag: 'Pintu sambungan selamat - Platform MT',
-        metaDesc: 'Halaman ini membantu anda menyambung ke platform rasmi MT dengan selamat.',
-        bar: 'Gateway Sambungan',
-        h1:'Sedang menyediakan sambungan selamat untuk anda',
-        p:'Halaman ini membantu anda pergi ke platform interaktif rasmi MT dengan cara yang selamat.',
+        titleTag: 'OFA168 - Pintu masuk rasmi',
+        metaDesc: 'Halaman ini membantu anda ke platform rasmi OFA168 dengan selamat.',
+        bar: 'Maklumat Sambungan',
+        h1:'Pengguna yang dihargai, kami telah menemui laluan yang selamat untuk anda.',
+        p:'Klik butang di bawah untuk ke platform rasmi.',
         sub:'Sila pastikan pautan ini datang daripada saluran rasmi dan lindungi maklumat akaun anda dengan baik.',
         btn:'Masuk Laman Rasmi',
         alt:'Logo'
